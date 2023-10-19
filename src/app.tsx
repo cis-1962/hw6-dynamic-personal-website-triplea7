@@ -1,3 +1,13 @@
+import { Provider } from 'react-redux';
+import Intro from './components/introduction';
+import { store } from './app/store';
+
 export default function App() {
-  return <main>Hello World!</main>;
+  return (
+    <div>
+      <Provider store={store}>
+        <Intro />
+      </Provider>
+    </div>
+  );
 }
