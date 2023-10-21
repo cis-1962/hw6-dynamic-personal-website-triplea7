@@ -29,36 +29,63 @@ export default function NewPost() {
 
   return (
     <div>
+      <h1 className="font-bold text-3xl flex justify-center items-center pt-4 pb-3">
+        Posts:
+      </h1>
       {inAddPostMode ? (
-        <div>
-          <input
-            type="text"
-            placeholder="Enter post title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Enter image link"
-            value={img}
-            onChange={(e) => setImg(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Enter description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <button type="button" onClick={handleClickSave}>
-            Save
-          </button>
-          <button type="button" onClick={handleClickCancel}>
-            Cancel
-          </button>
+        <div className="p-3 bg-white shadow rounded-lg space-y-5 border-solid border-2 border-indigo-600">
+          <p className="flex justify-center items-center text-lg">New Post</p>
+          <div className="flex justify-center items-center">
+            <input
+              className="border-solid border-2 border-light-gray-600"
+              type="text"
+              placeholder="Enter post title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="flex justify-center items-center">
+            <input
+              className="border-solid border-2 border-light-gray-600"
+              type="text"
+              placeholder="Enter image link"
+              value={img}
+              onChange={(e) => setImg(e.target.value)}
+            />
+          </div>
+          <div className="flex justify-center items-center">
+            <input
+              className="border-solid border-2 border-light-gray-600"
+              type="text"
+              placeholder="Enter description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+          <div className="flex space-x-4 flex justify-center items-center">
+            <button
+              className="border-solid border-2 border-indigo-600 px-2 rounded-full hover:font-bold"
+              type="button"
+              onClick={handleClickSave}
+            >
+              Save
+            </button>
+            <button
+              className="border-solid border-2 border-indigo-600 px-2 rounded-full hover:font-bold"
+              type="button"
+              onClick={handleClickCancel}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       ) : (
-        <div>
-          <button type="button" onClick={handleClickAddPost}>
+        <div className="flex justify-center items-center py-3">
+          <button
+            className="border-solid border-2 border-indigo-600 px-2 rounded-full hover:font-bold text-lg"
+            type="button"
+            onClick={handleClickAddPost}
+          >
             Add Post
           </button>
         </div>

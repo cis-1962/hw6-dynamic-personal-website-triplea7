@@ -39,40 +39,69 @@ export default function Edit({ id, title, img, description }: Post) {
     <div>
       {inEditMode ? (
         <div>
-          <h2>Edit Post</h2>
+          <h2 className="flex justify-center items-center font-bold">
+            Edit Post
+          </h2>
           <div>
-            <input
-              type="text"
-              placeholder={title}
-              value={newTitle}
-              onChange={(e) => setNewTitle(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder={img}
-              value={newImg}
-              onChange={(e) => setNewImg(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Enter description"
-              value={newDescription}
-              onChange={(e) => setNewDescription(e.target.value)}
-            />
-            <button type="button" onClick={handleClickSave}>
-              Save
-            </button>
-            <button type="button" onClick={handleClickCancel}>
-              Cancel
-            </button>
-            <button type="button" onClick={handleClickDelete}>
-              Delete
-            </button>
+            <div className="flex justify-center items-center py-2">
+              <input
+                className="border-solid border-2 border-light-gray-600"
+                type="text"
+                placeholder={title}
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
+              />
+            </div>
+            <div className="flex justify-center items-center py-2">
+              <input
+                className="border-solid border-2 border-light-gray-600"
+                type="text"
+                placeholder={img}
+                value={newImg}
+                onChange={(e) => setNewImg(e.target.value)}
+              />
+            </div>
+            <div className="flex justify-center items-center py-2">
+              <input
+                className="border-solid border-2 border-light-gray-600"
+                type="text"
+                placeholder="Enter description"
+                value={newDescription}
+                onChange={(e) => setNewDescription(e.target.value)}
+              />
+            </div>
+            <div className="flex space-x-4 flex justify-center items-center pt-2">
+              <button
+                className="border-solid border-2 border-indigo-600 px-2 rounded-full hover:font-bold"
+                type="button"
+                onClick={handleClickSave}
+              >
+                Save
+              </button>
+              <button
+                className="border-solid border-2 border-indigo-600 px-2 rounded-full hover:font-bold"
+                type="button"
+                onClick={handleClickCancel}
+              >
+                Cancel
+              </button>
+              <button
+                className="border-solid border-2 border-indigo-600 px-2 rounded-full hover:font-bold"
+                type="button"
+                onClick={handleClickDelete}
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       ) : (
         <div>
-          <button type="button" onClick={handleClickEditPost}>
+          <button
+            className="border-solid border-2 border-indigo-600 px-2 rounded-full hover:font-bold text-lg"
+            type="button"
+            onClick={handleClickEditPost}
+          >
             Edit
           </button>
         </div>
